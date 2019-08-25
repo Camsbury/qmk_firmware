@@ -45,7 +45,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 /* define if matrix has ghost */
 //#define MATRIX_HAS_GHOST
 
-#define TAPPING_TERM    200
+#define TAPPING_TERM    150
 #define IGNORE_MOD_TAP_INTERRUPT // this makes it possible to do rolling combos (zx) with keys that convert to other keys on hold (z becomes ctrl when you hold it, and when this option isn't enabled, z rapidly followed by x actually sends Ctrl-x. That's bad.)
 
 /* Mechanical locking support. Use KC_LCAP, KC_LNUM or KC_LSCR instead in keymap */
@@ -85,8 +85,6 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 #define RGBW 1
 
-#define RGBLIGHT_SLEEP
-
 /*
  * The debounce filtering reports a key/switch change directly,
  * without any extra delay. After that the debounce logic will filter
@@ -100,6 +98,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
  * 5, which is now closer to 10ms, but still plenty according to
  * manufacturer specs.
  */
+#define DEBOUNCE    5
+
+#define PREVENT_STUCK_MODIFIERS
 
 #define USB_MAX_POWER_CONSUMPTION 500
 
@@ -109,12 +110,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define DRIVER_COUNT 2
 #define DRIVER_1_LED_TOTAL 24
 #define DRIVER_2_LED_TOTAL 24
-#define DRIVER_LED_TOTAL (DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL)
-
-#define RGB_MATRIX_LED_PROCESS_LIMIT 5
-#define RGB_MATRIX_LED_FLUSH_LIMIT 26
-
-#define RGB_DISABLE_WHEN_USB_SUSPENDED true
+#define DRIVER_LED_TOTAL DRIVER_1_LED_TOTAL + DRIVER_2_LED_TOTAL
+#define RGB_MATRIX_SKIP_FRAMES 10
 
 // #define RGBLIGHT_COLOR_LAYER_0 0x00, 0x00, 0xFF
 /* #define RGBLIGHT_COLOR_LAYER_1 0x00, 0x00, 0xFF */
