@@ -3,6 +3,7 @@
 
 #include "../helix.h"
 
+//void promicro_bootloader_jmp(bool program);
 #include "quantum.h"
 
 #ifdef RGBLIGHT_ENABLE
@@ -17,6 +18,9 @@
 	#include <avr/interrupt.h>
 #endif
 #endif
+
+//void promicro_bootloader_jmp(bool program);
+
 
 #ifndef FLIP_HALF
 // Standard Keymap

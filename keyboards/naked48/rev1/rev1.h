@@ -2,12 +2,15 @@
 
 #include "naked48.h"
 
+//void promicro_bootloader_jmp(bool program);
 #include "quantum.h"
 
 #ifdef RGBLIGHT_ENABLE
 //rgb led driver
 #include "ws2812.h"
 #endif
+
+//void promicro_bootloader_jmp(bool program);
 
 //////////////////////////////////////////////////////////////////////////////
 // When only use Naked48.

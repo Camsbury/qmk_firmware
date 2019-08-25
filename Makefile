@@ -20,10 +20,7 @@ endif
 override SILENT := false
 
 ifndef SUB_IS_SILENT
-ifndef SKIP_GIT
-    QMK_VERSION := $(shell git describe --abbrev=0 --tags 2>/dev/null)
-endif
-
+QMK_VERSION := $(shell git describe --abbrev=0 --tags 2>/dev/null)
 ifneq ($(QMK_VERSION),)
 $(info QMK Firmware $(QMK_VERSION))
 endif
@@ -97,7 +94,6 @@ $(eval $(call NEXT_PATH_ELEMENT))
 # endif
 
 define GET_KEYBOARDS
-ifndef ALT_GET_KEYBOARDS
     All_RULES_MK := $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/rules.mk))
     All_RULES_MK += $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/*/rules.mk))
     All_RULES_MK += $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/*/*/rules.mk))
@@ -109,9 +105,6 @@ ifndef ALT_GET_KEYBOARDS
     KEYMAPS_MK += $$(patsubst $(ROOT_DIR)/keyboards/%/rules.mk,%,$$(wildcard $(ROOT_DIR)/keyboards/*/*/*/*/keymaps/*/rules.mk))
 
     KEYBOARDS := $$(sort $$(filter-out $$(KEYMAPS_MK), $$(All_RULES_MK)))
-else
-    KEYBOARDS := $(shell find keyboards/ -type f -iname "rules.mk" | grep -v keymaps | sed 's!keyboards/\(.*\)/rules.mk!\1!' | sort | uniq)
-endif
 endef
 
 $(eval $(call GET_KEYBOARDS))

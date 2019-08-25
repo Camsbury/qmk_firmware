@@ -37,7 +37,7 @@ RGBLIGHT_ENABLE = yes
 RGBLIGHT_CUSTOM_DRIVER = yes
 
 OPT_DEFS = -DDEBUG_LEVEL=0
-BOOTLOADER = bootloadHID
+OPT_DEFS += -DBOOTLOADER_SIZE=2048
 
 # custom matrix setup
 SRC = i2c_master.c

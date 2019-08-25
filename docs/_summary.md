@@ -18,7 +18,6 @@
   * [Build/Compile QMK](faq_build.md)
   * [Debugging/Troubleshooting QMK](faq_debug.md)
   * [Keymap](faq_keymap.md)
-  * [Driver Installation with Zadig](driver_installation_zadig.md)
 
 * Detailed Guides
   * [Install Build Tools](getting_started_build_tools.md)

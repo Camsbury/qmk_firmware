@@ -3,7 +3,9 @@
 
 #include "../helix.h"
 
+//void promicro_bootloader_jmp(bool program);
 #include "quantum.h"
+
 
 #ifdef USE_I2C
 #include <stddef.h>
@@ -12,6 +14,9 @@
   #include <avr/interrupt.h>
 #endif
 #endif
+
+//void promicro_bootloader_jmp(bool program);
+
 
 #if HELIX_ROWS == 3
   #ifndef FLIP_HALF

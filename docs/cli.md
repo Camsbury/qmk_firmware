@@ -6,8 +6,7 @@ This page describes how to setup and use the QMK CLI.
 
 The QMK CLI makes building and working with QMK keyboards easier. We have provided a number of commands to help you work with QMK:
 
-* `qmk compile`
-* `qmk doctor`
+* `qmk compile-json`
 
 # Setup
 
@@ -21,18 +20,12 @@ You may want to add this to your `.profile`, `.bash_profile`, `.zsh_profile`, or
 
 # Commands
 
-## `qmk compile`
+## `qmk compile-json`
 
-This command allows you to compile firmware from any directory. You can compile JSON exports from <https://config.qmk.fm> or compile keymaps in the repo.
+This command allows you to compile JSON files you have downloaded from <https://config.qmk.fm>.
 
-**Usage for Configurator Exports**:
-
-```
-qmk compile <configuratorExport.json>
-```
-
-**Usage for Keymaps**:
+**Usage**:
 
 ```
-qmk compile -kb <keyboard_name> -km <keymap_name>
+qmk compile-json mine.json
 ```

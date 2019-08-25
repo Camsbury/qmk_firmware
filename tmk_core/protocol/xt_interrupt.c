@@ -41,7 +41,7 @@ POSSIBILITY OF SUCH DAMAGE.
 #include <util/delay.h>
 #include "xt.h"
 #include "wait.h"
-#include "debug.h"
+#include "print.h"
 
 static inline uint8_t pbuf_dequeue(void);
 static inline void pbuf_enqueue(uint8_t data);
@@ -138,7 +138,7 @@ static inline void pbuf_enqueue(uint8_t data)
         pbuf[pbuf_head] = data;
         pbuf_head = next;
     } else {
-        dprintf("pbuf: full\n");
+        print("pbuf: full\n");
     }
     SREG = sreg;
 }
