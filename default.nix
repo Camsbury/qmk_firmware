@@ -1,4 +1,6 @@
-{ nixpkgs ? builtins.fetchTarball "https://github.com/nixos/nixpkgs/archive/be445a9074f.tar.gz" }:
+# { nixpkgs ? builtins.fetchTarball "https://github.com/nixos/nixpkgs/archive/be445a9074f.tar.gz" }:
+{ nixpkgs ? builtins.fetchTarball "https://github.com/nixos/nixpkgs/archive/ad4deefa9f593.tar.gz" }:
+
 let
   pkgs = import nixpkgs {};
 in pkgs.pkgsCross.avr.stdenv.mkDerivation rec {
